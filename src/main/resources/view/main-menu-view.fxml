@@ -5,6 +5,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -66,8 +69,28 @@
          <center>
             <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <ComboBox fx:id="cbCategorias" layoutX="32.0" layoutY="68.0" prefHeight="36.0" prefWidth="250.0" promptText="Elige una categoría" visible="false" />
+                  <ComboBox fx:id="cbCategorias" layoutX="32.0" layoutY="68.0" onAction="#handleLoadTableBooks" prefHeight="36.0" prefWidth="250.0" promptText="Elige una categoría" visible="false" />
                   <Label fx:id="lblCategorias" layoutX="80.0" layoutY="24.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Acceso a Categorías " visible="false" />
+                  <ScrollPane fx:id="scrollPaneLibros" layoutX="14.0" layoutY="123.0" prefHeight="200.0" prefWidth="289.0" visible="false">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="937.0">
+                           <children>
+                              <TableView fx:id="tvBooks" prefHeight="200.0" prefWidth="937.0">
+                                <columns>
+                                  <TableColumn fx:id="tvColumnIsbn" prefWidth="75.0" text="ISBN" />
+                                  <TableColumn fx:id="tvColumnTitle" prefWidth="111.3333511352539" text="Título" />
+                                    <TableColumn fx:id="tvColumnAuthor" prefWidth="141.3333282470703" text="Autor" />
+                                    <TableColumn fx:id="tvColumnPublisher" minWidth="0.0" prefWidth="96.66665649414062" text="Editorial" />
+                                    <TableColumn fx:id="tvColumnPublicationYear" prefWidth="116.66665649414062" text="Año de pulicación" />
+                                    <TableColumn fx:id="tvColumnAvailableCopies" prefWidth="120.6666259765625" text="Copias disponibles" />
+                                    <TableColumn fx:id="tvColumnIdCategory" prefWidth="123.33331298828125" text="ID de categoría" />
+                                    <TableColumn fx:id="tvColumnIdUser" prefWidth="154.6666259765625" text="ID usuario de registro" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
                </children>
             </Pane>
          </center>

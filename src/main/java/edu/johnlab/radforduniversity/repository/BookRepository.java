@@ -43,6 +43,7 @@ public class BookRepository {
     }
 
     public ObservableList<Book> findAll(String idCategory) {
+        listaLibros.clear();
         String sql = "Select * from books where id_category = ?";
 
         try (PreparedStatement pstm = getConnectionDataBase().prepareStatement(sql)) {
