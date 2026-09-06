@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.edu.johnlab.radforduniversity.controller.RegistroController">
+    <stylesheets>
+        <URL value="@/main/resources/css/registro-view.css" />
+    </stylesheets>
+   <children>
+      <GridPane alignment="CENTER" stylesheets="@../css/login-view.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="600.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="0.0" prefWidth="0.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="503.0" minHeight="10.0" prefHeight="503.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Pane>
+               <children>
+                  <ScrollPane layoutX="101.0" layoutY="161.0" prefHeight="231.0" prefWidth="398.0" stylesheets="@../css/registro-view.css">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="428.0" prefWidth="382.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="428.0" prefWidth="395.0" styleClass="card-pane" stylesheets="@../css/login-view.css">
+                                 <children>
+                                    <Pane prefHeight="423.0" prefWidth="395.0">
+                                       <children>
+                                          <Label layoutX="111.0" layoutY="177.0" text="Usuario" />
+                                          <Label layoutX="109.0" layoutY="17.0" stylesheets="@../css/login-view.css" text="Nombre" />
+                                          <TextField fx:id="txtFieldName" layoutX="109.0" layoutY="41.0" promptText="ej. Juan" />
+                                          <TextField fx:id="txtFieldUser" layoutX="110.0" layoutY="200.0" promptText="ej. Juan123" />
+                                          <Label layoutX="109.0" layoutY="253.0" text="Email" />
+                                          <TextField fx:id="txtFieldEmail" layoutX="109.0" layoutY="276.0" promptText="ej. juanlopez@gmail.com" />
+                                          <Label layoutX="107.0" layoutY="333.0" text="Contraseña" />
+                                          <PasswordField fx:id="passFieldPassword" layoutX="109.0" layoutY="357.0" promptText="••••••••" />
+                                          <TextField fx:id="txtFieldLastName" layoutX="109.0" layoutY="122.0" promptText="ej. López" />
+                                          <Label layoutX="109.0" layoutY="99.0" stylesheets="@../css/login-view.css" text="Apellido" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <styleClass>
+                        <String fx:value="scroll-bar" />
+                        <String fx:value="track" />
+                        <String fx:value="thumb" />
+                     </styleClass>
+                  </ScrollPane>
+                  <Pane layoutX="101.0" layoutY="49.0" prefHeight="112.0" prefWidth="398.0" styleClass="header-image" stylesheets="@../css/login-view.css">
+                     <children>
+                        <ImageView fitHeight="112.0" fitWidth="398.0" layoutX="-1.0">
+                           <image>
+                              <Image url="@../images/montanas.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="60.0" fitWidth="43.0" layoutX="178.0" layoutY="26.0">
+                           <image>
+                              <Image url="@../images/blanco.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="81.0" fitWidth="81.0" layoutX="159.0" layoutY="16.0">
+                           <image>
+                              <Image url="@../images/login-logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="101.0" layoutY="392.0" prefHeight="81.0" prefWidth="398.0" styleClass="card-pane" stylesheets="@../css/registro-view.css">
+                     <children>
+                        <Button layoutX="56.0" layoutY="21.0" mnemonicParsing="false" onAction="#saveUser" prefHeight="40.0" prefWidth="125.0" text="Guardar" />
+                        <Button layoutX="210.0" layoutY="21.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="40.0" prefWidth="125.0" stylesheets="@../css/login-view.css" text="Cancelar" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+         <styleClass>
+            <String fx:value="background" />
+            <String fx:value="background" />
+            <String fx:value="background" />
+         </styleClass>
+      </GridPane>
+   </children>
+</AnchorPane>
