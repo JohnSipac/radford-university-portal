@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -15,10 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" fx:id="mainContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="544.0" prefWidth="735.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.edu.johnlab.radforduniversity.controller.MainMenuController">
-    <stylesheets>
-        <URL value="@/main/resources/css/main-menu.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" fx:id="mainContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="544.0" prefWidth="735.0" styleClass="mainFxmlClass" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.edu.johnlab.radforduniversity.controller.MainMenuController">
    <children>
       <BorderPane styleClass="background" stylesheets="@../css/main-menu.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -43,9 +38,9 @@
                <children>
                   <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="355.0" prefWidth="177.0" spacing="20.0">
                      <children>
-                        <Label prefHeight="28.0" prefWidth="91.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Navegación">
+                        <Label prefHeight="28.0" prefWidth="103.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Navegación">
                            <VBox.margin>
-                              <Insets left="33.0" />
+                              <Insets left="28.0" />
                            </VBox.margin></Label>
                         <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Inicio" />
                         <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Perfil" />
@@ -65,9 +60,9 @@
                <children>
                   <VBox fx:id="vBoxButtons" layoutX="2.0" layoutY="-1.0" prefHeight="355.0" prefWidth="177.0" spacing="20.0" visible="false">
                      <children>
-                        <Label prefHeight="28.0" prefWidth="61.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Gestión">
+                        <Label prefHeight="28.0" prefWidth="71.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Gestión">
                            <VBox.margin>
-                              <Insets left="48.0" />
+                              <Insets left="45.0" />
                            </VBox.margin>
                         </Label>
                         <Button fx:id="btnCrear" mnemonicParsing="false" onAction="#handleCreateBook" prefHeight="40.0" prefWidth="155.0" text="Crear" />
@@ -88,26 +83,18 @@
                <children>
                   <ComboBox fx:id="cbCategorias" layoutX="65.0" layoutY="69.0" onAction="#handleLoadTableBooks" prefHeight="36.0" prefWidth="250.0" promptText="Elige una categoría" visible="false" />
                   <Label fx:id="lblCategorias" layoutX="113.0" layoutY="25.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Acceso a Categorías " visible="false" />
-                  <ScrollPane fx:id="scrollPaneLibros" layoutX="14.0" layoutY="125.0" prefHeight="187.0" prefWidth="353.0" visible="false">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="187.0" prefWidth="937.0">
-                           <children>
-                              <TableView fx:id="tvBooks" prefHeight="187.0" prefWidth="937.0">
-                                <columns>
-                                  <TableColumn fx:id="tvColumnIsbn" prefWidth="75.0" text="ISBN" />
-                                  <TableColumn fx:id="tvColumnTitle" prefWidth="111.3333511352539" text="Título" />
-                                    <TableColumn fx:id="tvColumnAuthor" prefWidth="141.3333282470703" text="Autor" />
-                                    <TableColumn fx:id="tvColumnPublisher" minWidth="0.0" prefWidth="96.66665649414062" text="Editorial" />
-                                    <TableColumn fx:id="tvColumnPublicationYear" prefWidth="116.66665649414062" text="Año de pulicación" />
-                                    <TableColumn fx:id="tvColumnAvailableCopies" prefWidth="120.6666259765625" text="Copias disponibles" />
-                                    <TableColumn fx:id="tvColumnIdCategory" prefWidth="123.33331298828125" text="ID de categoría" />
-                                    <TableColumn fx:id="tvColumnIdUser" prefWidth="154.6666259765625" text="ID usuario de registro" />
-                                </columns>
-                              </TableView>
-                           </children>
-                        </AnchorPane>
-                    </content>
-                  </ScrollPane>
+                  <TableView fx:id="tvBooks" layoutX="14.0" layoutY="125.0" prefHeight="187.0" prefWidth="353.0" visible="false">
+                    <columns>
+                      <TableColumn fx:id="tvColumnIsbn" prefWidth="75.0" text="ISBN" />
+                      <TableColumn fx:id="tvColumnTitle" prefWidth="111.3333511352539" text="Título" />
+                        <TableColumn fx:id="tvColumnAuthor" prefWidth="141.3333282470703" text="Autor" />
+                        <TableColumn fx:id="tvColumnPublisher" minWidth="0.0" prefWidth="96.66665649414062" text="Editorial" />
+                        <TableColumn fx:id="tvColumnPublicationYear" prefWidth="116.66665649414062" text="Año de pulicación" />
+                        <TableColumn fx:id="tvColumnAvailableCopies" prefWidth="120.6666259765625" text="Copias disponibles" />
+                        <TableColumn fx:id="tvColumnIdCategory" prefWidth="123.33331298828125" text="ID de categoría" />
+                        <TableColumn fx:id="tvColumnIdUser" prefWidth="154.6666259765625" text="ID usuario de registro" />
+                    </columns>
+                  </TableView>
                </children>
             </Pane>
          </center>
