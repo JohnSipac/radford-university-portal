@@ -20,8 +20,6 @@ import javafx.scene.layout.VBox;
 import main.java.edu.johnlab.radforduniversity.model.Book;
 import main.java.edu.johnlab.radforduniversity.model.Category;
 import main.java.edu.johnlab.radforduniversity.model.UserAuth;
-import main.java.edu.johnlab.radforduniversity.repository.BookRepository;
-import main.java.edu.johnlab.radforduniversity.repository.CategoryRepository;
 import main.java.edu.johnlab.radforduniversity.utils.sceneManager.SceneManager;
 
 public class MainMenuController implements Initializable {
@@ -48,8 +46,6 @@ public class MainMenuController implements Initializable {
     private ComboBox<String> cbCategorias;
     @FXML
     private Label lblCategorias;
-    @FXML
-    private ScrollPane scrollPaneLibros;
     @FXML
     private TableView<Book> tvBooks;
     @FXML
@@ -84,14 +80,6 @@ public class MainMenuController implements Initializable {
         tvColumnIdCategory.setCellValueFactory(new PropertyValueFactory<>("idCategory"));
         tvColumnIdUser.setCellValueFactory(new PropertyValueFactory<>("idUser"));
 
-        tvBooks.getSelectionModel().selectedItemProperty().addListener((observable, oldBook, newBook) -> {
-            if (newBook != null) {
-                showButtons();
-            } else {
-                vBoxButtons.setVisible(false);
-            }
-        });
-
         cbCategorias.getItems().addAll(
                 "Ciencia Ficción",
                 "Misterio y Suspenso",
@@ -117,12 +105,12 @@ public class MainMenuController implements Initializable {
     public void mostrarCategorias(ActionEvent event) {
         lblCategorias.setVisible(true);
         cbCategorias.setVisible(true);
-        showButtons();
+        vBoxButtons.setVisible(true);
+
     }
 
     public void handleLoadTableBooks() {
-        scrollPaneLibros.setVisible(true);
-
+        tvBooks.setVisible(true);
         try {
             String categoriaSeleccionada = cbCategorias.getValue();
             if (categoriaSeleccionada == null) {
@@ -140,36 +128,47 @@ public class MainMenuController implements Initializable {
         }
     }
 
-    public void showButtons() {
-        vBoxButtons.setVisible(true);
-    }
-
     public void handleCreateBook() throws Exception {
         sceneManager.showCreateBookView(userModel);
     }
 
-    public void handleUpdateBook() throws Exception {
+    public void handleUpdateBook() {
         libroSeleccionado = tvBooks.getSelectionModel().getSelectedItem();
-        sceneManager.showUpdateBookView(userModel, libroSeleccionado);
+
+        if (libroSeleccionado != null) {
+            try {
+                sceneManager.showUpdateBookView(userModel, libroSeleccionado);
+            } catch (Exception e) {
+                e.printStackTrace();
+                sceneManager.showInfoAlert("Error", "Error de navegación", "No se pudo abrir la vista de edición.", Alert.AlertType.ERROR);
+            }
+        } else {
+            sceneManager.showInfoAlert("Información", "Contenido no seleccionado", "Seleccione el libro a actualizar.", Alert.AlertType.INFORMATION);
+        }
     }
 
     public void handleDeleteBook() {
         libroSeleccionado = tvBooks.getSelectionModel().getSelectedItem();
 
-        if (libroSeleccionado == null) {
-            return;
-        }
+        if (libroSeleccionado != null) {
+            try {
+                boolean eliminado = bookRepository.deleteById(libroSeleccionado.getIsbn());
 
-        try {
-            boolean eliminado = bookRepository.deleteById(libroSeleccionado.getIsbn());
+                if (eliminado) {
+                    tvBooks.getItems().remove(libroSeleccionado);
+                    tvBooks.getSelectionModel().clearSelection();
+                    sceneManager.showInfoAlert("Estado de eliminación", "Libro eliminado", "El libro se ha eliminado correctamente", Alert.AlertType.INFORMATION);
+                } else {
+                    sceneManager.showInfoAlert("Estado de eliminación", "Fallo en eliminación", "El libro no se ha eliminado correctamente", Alert.AlertType.ERROR);
 
-            if (eliminado) {
-                tvBooks.getItems().remove(libroSeleccionado);
-                tvBooks.getSelectionModel().clearSelection();
-                sceneManager.showInfoAlert("Estado de eliminación", "Libro eliminado", "El libro se ha eliminado correctamente", Alert.AlertType.INFORMATION);
+                }
+            } catch (Exception e) {
+                sceneManager.showInfoAlert("Estado de eliminación", "Fallo en eliminación", "El libro no se ha eliminado correctamente", Alert.AlertType.ERROR);
             }
-        } catch (Exception e) {
-            System.out.println("Error al eliminar el libro: " + e.getMessage());
+        } else {
+            sceneManager.showInfoAlert("Información", "Contenido no seleccionado", "Seleccione el libro a eliminar.", Alert.AlertType.INFORMATION);
+
         }
+
     }
 }

@@ -12,8 +12,6 @@ import javafx.scene.control.TextField;
 import main.java.edu.johnlab.radforduniversity.model.Book;
 import main.java.edu.johnlab.radforduniversity.model.Category;
 import main.java.edu.johnlab.radforduniversity.model.UserAuth;
-import main.java.edu.johnlab.radforduniversity.repository.BookRepository;
-import main.java.edu.johnlab.radforduniversity.repository.CategoryRepository;
 import main.java.edu.johnlab.radforduniversity.utils.sceneManager.SceneManager;
 
 public class CreateBookController implements Initializable {
@@ -83,8 +81,6 @@ public class CreateBookController implements Initializable {
 
                 String idCategory = catObj.getIdCategory();
                 
-                System.out.println("DEBUG: Insertando Libro -> ISBN: " + idUnico + " | idCategory: " + idCategory + " | idUser: " + idUser);
-
                 Book libroNuevo = new Book(idUnico.toString(), idCategory, idUser, title, author, publisher, publicationYear, availableCopies);
 
                 boolean guardado = bookRepository.create(libroNuevo);
