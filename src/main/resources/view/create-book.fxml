@@ -9,26 +9,26 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="513.0" prefWidth="600.0" styleClass="mainFxmlClass" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.edu.johnlab.radforduniversity.controller.CreateBookController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" styleClass="background" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.edu.johnlab.radforduniversity.controller.CreateBookController">
    <children>
-      <GridPane alignment="CENTER" prefHeight="510.0" prefWidth="600.0" stylesheets="@../css/main-menu.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="600.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="0.0" prefWidth="0.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints maxHeight="503.0" minHeight="10.0" prefHeight="503.0" vgrow="SOMETIMES" />
-         </rowConstraints>
+      <Pane layoutX="101.0" layoutY="94.0">
          <children>
-            <Pane>
+            <VBox prefHeight="412.0" prefWidth="399.0">
                <children>
-                  <ScrollPane layoutX="101.0" layoutY="138.0" prefHeight="239.0" prefWidth="398.0" stylesheets="@../css/registro-view.css">
+                  <Pane prefHeight="93.0" prefWidth="398.0" styleClass="header-image" stylesheets="@../css/login-view.css">
+                     <children>
+                        <ImageView fitHeight="94.0" fitWidth="398.0">
+                           <image>
+                              <Image url="@../images/montanas.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="119.0" layoutY="27.0" styleClass="label-large" stylesheets="@../css/main-menu.css" text="Crear libro" />
+                     </children>
+                  </Pane>
+                  <ScrollPane prefHeight="239.0" prefWidth="398.0" stylesheets="@../css/registro-view.css">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="382.0">
                            <children>
@@ -61,30 +61,15 @@
                         <String fx:value="thumb" />
                      </styleClass>
                   </ScrollPane>
-                  <Pane layoutX="101.0" layoutY="43.0" prefHeight="93.0" prefWidth="398.0" styleClass="header-image" stylesheets="@../css/login-view.css">
-                     <children>
-                        <ImageView fitHeight="94.0" fitWidth="398.0">
-                           <image>
-                              <Image url="@../images/montanas.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="119.0" layoutY="27.0" styleClass="label-large" stylesheets="@../css/main-menu.css" text="Crear libro" />
-                     </children>
-                  </Pane>
-                  <Pane layoutX="101.0" layoutY="377.0" prefHeight="81.0" prefWidth="398.0" styleClass="card-pane" stylesheets="@../css/registro-view.css">
+                  <Pane prefHeight="81.0" prefWidth="398.0" styleClass="card-pane" stylesheets="@../css/registro-view.css">
                      <children>
                         <Button fx:id="btnGuardar" layoutX="56.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleSaveBook" prefHeight="40.0" prefWidth="125.0" text="Guardar" />
                         <Button fx:id="btnCancelar" layoutX="210.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleCancelSave" prefHeight="40.0" prefWidth="125.0" stylesheets="@../css/login-view.css" text="Cancelar" />
                      </children>
                   </Pane>
                </children>
-            </Pane>
+            </VBox>
          </children>
-         <styleClass>
-            <String fx:value="background" />
-            <String fx:value="background" />
-            <String fx:value="background" />
-         </styleClass>
-      </GridPane>
+      </Pane>
    </children>
 </AnchorPane>

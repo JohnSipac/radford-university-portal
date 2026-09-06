@@ -20,8 +20,6 @@ import javafx.scene.layout.VBox;
 import main.java.edu.johnlab.radforduniversity.model.Book;
 import main.java.edu.johnlab.radforduniversity.model.Category;
 import main.java.edu.johnlab.radforduniversity.model.UserAuth;
-import main.java.edu.johnlab.radforduniversity.repository.BookRepository;
-import main.java.edu.johnlab.radforduniversity.repository.CategoryRepository;
 import main.java.edu.johnlab.radforduniversity.utils.sceneManager.SceneManager;
 
 public class MainMenuController implements Initializable {

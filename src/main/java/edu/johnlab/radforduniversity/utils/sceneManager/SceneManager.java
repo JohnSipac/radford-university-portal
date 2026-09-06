@@ -16,8 +16,8 @@ import main.java.edu.johnlab.radforduniversity.controller.UpdateBookController;
 import main.java.edu.johnlab.radforduniversity.model.Book;
 import main.java.edu.johnlab.radforduniversity.model.Category;
 import main.java.edu.johnlab.radforduniversity.model.UserAuth;
-import main.java.edu.johnlab.radforduniversity.repository.BookRepository;
-import main.java.edu.johnlab.radforduniversity.repository.CategoryRepository;
+import main.java.edu.johnlab.radforduniversity.controller.BookRepository;
+import main.java.edu.johnlab.radforduniversity.controller.CategoryRepository;
 
 public class SceneManager {
 
@@ -145,7 +145,7 @@ public class SceneManager {
         });
 
         Parent root = loader.load();
-        Scene scene = new Scene(root, 735, 600);
+        Scene scene = new Scene(root, 600, 600);
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
         primaryStage.show();
@@ -177,7 +177,7 @@ public class SceneManager {
         });
 
         Parent root = loader.load();
-        Scene scene = new Scene(root, 735, 600);
+        Scene scene = new Scene(root, 600, 600);
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
         primaryStage.show();

@@ -13,77 +13,30 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" fx:id="mainContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="544.0" prefWidth="735.0" styleClass="mainFxmlClass" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.edu.johnlab.radforduniversity.controller.MainMenuController">
+<AnchorPane id="AnchorPane" fx:id="mainContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="544.0" prefWidth="735.0" styleClass="main-menu" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.edu.johnlab.radforduniversity.controller.MainMenuController">
    <children>
       <BorderPane styleClass="background" stylesheets="@../css/main-menu.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <top>
-            <Pane prefHeight="92.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="91.0" fitWidth="735.0">
-                     <image>
-                        <Image url="@../images/triangulos.jpg" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="74.0" fitWidth="74.0" layoutX="28.0" layoutY="9.0">
-                     <image>
-                        <Image url="@../images/logo.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="lblWelcomeUser" layoutX="126.0" layoutY="26.0" styleClass="label-title" stylesheets="@../css/main-menu.css" text="Label" />
-               </children>
-            </Pane>
-         </top>
-         <left>
-            <Pane prefHeight="353.0" prefWidth="175.0" BorderPane.alignment="CENTER">
-               <children>
-                  <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="355.0" prefWidth="177.0" spacing="20.0">
-                     <children>
-                        <Label prefHeight="28.0" prefWidth="103.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Navegación">
-                           <VBox.margin>
-                              <Insets left="28.0" />
-                           </VBox.margin></Label>
-                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Inicio" />
-                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Perfil" />
-                        <Button mnemonicParsing="false" prefWidth="155.0" text="Configuración" />
-                        <Button mnemonicParsing="false" onAction="#mostrarCategorias" prefHeight="40.0" prefWidth="155.0" text="Gestión de Libros" />
-                        <Button layoutX="20.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="155.0" text="Cerrar Sesión" />
-                     </children>
-                     <padding>
-                        <Insets left="10.0" right="5.0" top="20.0" />
-                     </padding>
-                  </VBox>
-               </children>
-            </Pane>
-         </left>
-         <right>
-            <Pane prefHeight="353.0" prefWidth="180.0" BorderPane.alignment="CENTER">
-               <children>
-                  <VBox fx:id="vBoxButtons" layoutX="2.0" layoutY="-1.0" prefHeight="355.0" prefWidth="177.0" spacing="20.0" visible="false">
-                     <children>
-                        <Label prefHeight="28.0" prefWidth="71.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Gestión">
-                           <VBox.margin>
-                              <Insets left="45.0" />
-                           </VBox.margin>
-                        </Label>
-                        <Button fx:id="btnCrear" mnemonicParsing="false" onAction="#handleCreateBook" prefHeight="40.0" prefWidth="155.0" text="Crear" />
-                        <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#handleUpdateBook" prefHeight="40.0" prefWidth="155.0" text="Actualizar" />
-                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#handleDeleteBook" prefWidth="155.0" text="Eliminar" />
-                     </children>
-                     <padding>
-                        <Insets left="10.0" right="5.0" top="20.0" />
-                     </padding>
-                  </VBox>
-               </children></Pane>
-         </right>
          <bottom>
-            <Pane prefHeight="94.0" prefWidth="735.0" BorderPane.alignment="CENTER" />
+            <Pane prefHeight="20.0" prefWidth="735.0" styleClass="background" stylesheets="@../css/styles.css" BorderPane.alignment="CENTER" />
          </bottom>
-         <center>
-            <Pane prefHeight="353.0" prefWidth="370.0" BorderPane.alignment="CENTER">
+         <top>
+            <AnchorPane styleClass="banner" stylesheets="@../css/styles.css" BorderPane.alignment="CENTER">
                <children>
-                  <ComboBox fx:id="cbCategorias" layoutX="65.0" layoutY="69.0" onAction="#handleLoadTableBooks" prefHeight="36.0" prefWidth="250.0" promptText="Elige una categoría" visible="false" />
-                  <Label fx:id="lblCategorias" layoutX="113.0" layoutY="25.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Acceso a Categorías " visible="false" />
-                  <TableView fx:id="tvBooks" layoutX="14.0" layoutY="125.0" prefHeight="187.0" prefWidth="353.0" visible="false">
+                  <Label fx:id="lblWelcomeUser" layoutX="126.0" layoutY="26.0" styleClass="label-title" stylesheets="@../css/main-menu.css" text="Label" />
+                  <ImageView fitHeight="72.0" fitWidth="75.0" layoutX="25.0" layoutY="10.0">
+                     <image>
+                        <Image url="@../images/logo2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="343.0" prefWidth="358.0" styleClass="main-menu" stylesheets="@../css/styles.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblCategorias" alignment="CENTER" layoutX="90.0" layoutY="25.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Acceso a Categorías " visible="false" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                  <ComboBox fx:id="cbCategorias" layoutX="59.0" layoutY="66.0" onAction="#handleLoadTableBooks" prefHeight="36.0" prefWidth="250.0" promptText="Elige una categoría" visible="false" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                  <TableView fx:id="tvBooks" layoutX="14.0" layoutY="129.0" prefHeight="187.0" prefWidth="353.0" visible="false" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="127.0">
                     <columns>
                       <TableColumn fx:id="tvColumnIsbn" prefWidth="75.0" text="ISBN" />
                       <TableColumn fx:id="tvColumnTitle" prefWidth="111.3333511352539" text="Título" />
@@ -96,8 +49,46 @@
                     </columns>
                   </TableView>
                </children>
-            </Pane>
+            </AnchorPane>
          </center>
+         <left>
+            <VBox prefHeight="359.0" prefWidth="200.0" spacing="20.0" styleClass="main-menu" stylesheets="@../css/styles.css" BorderPane.alignment="TOP_CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="142.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Navegación">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="155.0" text="Inicio" />
+                  <Button mnemonicParsing="false" onAction="#mostrarCategorias" prefHeight="40.0" prefWidth="155.0" text="Gestión de Libros" />
+                  <Button layoutX="20.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="155.0" text="Cerrar Sesión" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </left>
+         <right>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="main-menu" stylesheets="@../css/styles.css" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox fx:id="vBoxButtons" prefHeight="355.0" prefWidth="177.0" spacing="20.0" styleClass="main-menu" stylesheets="@../css/styles.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="28.0" prefWidth="154.0" styleClass="label-subtitle" stylesheets="@../css/main-menu.css" text="Gestión">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="btnCrear" mnemonicParsing="false" onAction="#handleCreateBook" prefHeight="40.0" prefWidth="155.0" text="Crear" />
+                        <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#handleUpdateBook" prefHeight="40.0" prefWidth="155.0" text="Actualizar" />
+                        <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#handleDeleteBook" prefWidth="155.0" text="Eliminar" />
+                     </children>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </right>
       </BorderPane>
    </children>
 </AnchorPane>
