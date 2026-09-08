@@ -1,4 +1,4 @@
-package main.java.edu.johnlab.radforduniversity.controller;
+package main.java.edu.johnlab.radforduniversity.model;
 
 import java.util.UUID;
 import main.java.edu.johnlab.radforduniversity.model.Book;

@@ -1,5 +1,7 @@
 package main.java.edu.johnlab.radforduniversity.controller;
 
+import main.java.edu.johnlab.radforduniversity.model.BookRepository;
+import main.java.edu.johnlab.radforduniversity.model.CategoryRepository;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.UUID;

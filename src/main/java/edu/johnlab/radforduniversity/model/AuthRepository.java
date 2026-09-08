@@ -1,4 +1,4 @@
-package main.java.edu.johnlab.radforduniversity.controller;
+package main.java.edu.johnlab.radforduniversity.model;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

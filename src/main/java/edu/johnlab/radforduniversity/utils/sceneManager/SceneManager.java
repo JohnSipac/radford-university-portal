@@ -16,8 +16,8 @@ import main.java.edu.johnlab.radforduniversity.controller.UpdateBookController;
 import main.java.edu.johnlab.radforduniversity.model.Book;
 import main.java.edu.johnlab.radforduniversity.model.Category;
 import main.java.edu.johnlab.radforduniversity.model.UserAuth;
-import main.java.edu.johnlab.radforduniversity.controller.BookRepository;
-import main.java.edu.johnlab.radforduniversity.controller.CategoryRepository;
+import main.java.edu.johnlab.radforduniversity.model.BookRepository;
+import main.java.edu.johnlab.radforduniversity.model.CategoryRepository;
 
 public class SceneManager {
 
